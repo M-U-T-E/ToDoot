@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todoot</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="header-controls">
+    <h1>ToDoot</h1>
+    <button id="theme-toggle-button">Toggle Theme</button>
+</div>
+
+<!-- ... rest of your HTML for adding todos and the list ... -->
+<div class="add-todo">
+    <input type="text" id="todo-title" placeholder="Todo title...">
+    <input type="text" id="todo-description" placeholder="Description (optional)...">
+    <button onclick="addTodo()">Add Todo</button>
+</div>
+
+<ul id="todo-list">
+    {{#todos}}
+    <li class="{{#completed}}completed{{/completed}}" data-id="{{id}}">
+        <input type="checkbox" {{#completed}}checked{{/completed}} onchange="toggleTodo({{id}})">
+        <span class="title">{{title}}</span>
+        <span class="description">{{description}}</span>
+        <button class="delete-btn" onclick="deleteTodo({{id}})">Delete</button>
+    </li>
+    {{/todos}}
+    {{^todos}}
+    <li>No todos yet! Add one above.</li>
+    {{/todos}}
+</ul>
+
+<script src="/static/js/todosManager.js"></script> <!-- Assuming your JS is here -->
+
+</body>
+</html>

@@ -30,3 +30,21 @@
 *.exe
 *.out
 *.app
+
+# CLion specific files
+.idea/
+
+# CMake generated files and directories
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cbp
+compile_commands.json
+
+# Other common temporary or generated files
+*.swp
+*~
+*.bak
+*.tmp

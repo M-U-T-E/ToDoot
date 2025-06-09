@@ -1,0 +1,185 @@
+/* static/style.css */
+
+/* Define color variables for light and dark themes */
+
+:root {
+    /* Dark Theme (Default) */
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --line-height: 1.6;
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --header-color: #f0f0f0;
+    --card-bg: #2c2c2c;
+    --card-border: #444444;
+    --card-shadow: rgba(255,255,255,0.05);
+    --card-shadow-hover: rgba(255,255,255,0.1);
+    --input-area-bg: #222222;
+    --input-field-bg: #333333;
+    --input-field-border: #555555;
+    --button-primary-bg: #0d6efd;
+    --button-primary-hover-bg: #0b5ed7;
+    --button-danger-bg: #bb2d3b;
+    --button-danger-hover-bg: #b02a37;
+    --completed-text-color: #888888;
+    --link-color: #3498db;
+
+}
+
+body.dark-mode {
+    /* Light Theme */
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --header-color: #343a40;
+    --card-bg: #ffffff;
+    --card-border: #dee2e6;
+    --card-shadow: rgba(0,0,0,0.05);
+    --card-shadow-hover: rgba(0,0,0,0.1);
+    --input-area-bg: #e9ecef;
+    --input-field-bg: #ffffff;
+    --input-field-border: #ced4da;
+    --button-primary-bg: #007bff;
+    --button-primary-text: white;
+    --button-primary-hover-bg: #0056b3;
+    --button-danger-bg: #dc3545;
+    --button-danger-text: white;
+    --button-danger-hover-bg: #c82333;
+    --completed-text-color: #6c757d;
+    --link-color: #007bff; /* Example for theme toggle button if styled as link */
+}
+
+/* Apply variables to your elements */
+body {
+    font-family: var(--font-family);
+    margin: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: var(--line-height);
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: var(--header-color);
+    text-align: center;
+    margin-bottom: 0; /* Adjusted as it's in flex now */
+    flex-grow: 1; /* Allow h1 to take space */
+}
+
+#theme-toggle-button {
+    padding: 8px 15px;
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease-in-out;
+    margin-left: 20px; /* Space from h1 */
+}
+
+#theme-toggle-button:hover {
+    background-color: var(--button-primary-hover-bg);
+}
+
+.add-todo {
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background-color: var(--input-area-bg);
+    border-radius: 8px;
+}
+
+.add-todo input[type="text"] {
+    flex: 1 1 200px;
+    padding: 10px;
+    background-color: var(--input-field-bg);
+    color: var(--text-color); /* Ensure input text color changes */
+    border: 1px solid var(--input-field-border);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.add-todo button {
+    padding: 10px 20px;
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.add-todo button:hover {
+    background-color: var(--button-primary-hover-bg);
+}
+
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#todo-list li {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px var(--card-shadow);
+    transition: box-shadow 0.2s ease-in-out, background-color 0.3s;
+}
+#todo-list li:hover {
+    box-shadow: 0 2px 5px var(--card-shadow-hover);
+}
+
+#todo-list li.completed .title,
+#todo-list li.completed .description {
+    text-decoration: line-through;
+    color: var(--completed-text-color);
+}
+
+#todo-list li input[type="checkbox"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+    cursor: pointer;
+    /* Consider styling checkbox for dark mode if default is hard to see */
+}
+
+#todo-list li .title {
+    font-weight: 500;
+    color: var(--text-color); /* Use text-color for consistency */
+}
+
+#todo-list li .description {
+    font-size: 0.9em;
+    color: var(--completed-text-color); /* Or a slightly less muted var(--text-color) if preferred */
+    margin-left: 15px;
+    flex-grow: 1;
+    word-break: break-word;
+}
+
+#todo-list li .delete-btn {
+    background-color: var(--button-danger-bg);
+    color: var(--button-danger-text);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#todo-list li .delete-btn:hover {
+    background-color: var(--button-danger-hover-bg);
+}
