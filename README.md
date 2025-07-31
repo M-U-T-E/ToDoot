@@ -69,7 +69,7 @@ You'll need the **GCC C++ compiler**, CMake, and a few libraries installed throu
     cd ToDoot
 
     # Clone sqlite_orm into the vendor directory
-    git clone [https://github.com/fnc12/sqlite_orm.git](https://github.com/fnc12/sqlite_orm.git) vendor/sqlite_orm
+    git clone https://github.com/fnc12/sqlite_orm.git vendor/sqlite_orm
     ```
 
 3.  **Configure and Build with CMake**
