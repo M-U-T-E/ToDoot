@@ -24,7 +24,7 @@ The goal was to create a self-contained, high-performance To-Do application that
 
 ## Demo 🎬
 
-<img src="https://github.com/M-U-T-E/ToDoot/blob/main/assets/Demo.gif?raw=true" alt="Demo.gif" width="500"/>
+<img src="https://github.com/M-U-T-E/ToDoot/blob/main/assets/Demo.gif?raw=true" alt="Demo.gif" width="1000"/>
 
 ---
 
