@@ -95,7 +95,6 @@ async function addTodo() {
     }
 }
 
-// MODIFIED toggleTodo function
 async function toggleTodo(id) {
     try {
         const response = await fetch(`/api/todos/${id}/toggle`, {
@@ -164,22 +163,21 @@ async function deleteTodo(id) {
         alert('Error deleting todo. See console for details.');
     }
 }
-// You can add the theme toggle JavaScript here or in todosManager.js
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.getElementById('theme-toggle-button');
     const currentTheme = localStorage.getItem('theme');
 
     // Apply saved theme on load
-    if (currentTheme === 'dark') {
-        document.body.classList.add('dark-mode');
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-mode');
     }
 
     if (themeToggleButton) {
         themeToggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            let theme = 'light';
-            if (document.body.classList.contains('dark-mode')) {
-                theme = 'dark';
+            document.body.classList.toggle('light-mode');
+            let theme = 'dark';
+            if (document.body.classList.contains('light-mode')) {
+                theme = 'light';
             }
             localStorage.setItem('theme', theme); // Save preference
         });

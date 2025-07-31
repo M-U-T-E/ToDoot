@@ -20,11 +20,12 @@ int main() {
     // Initialize Database Manager
     db::DatabaseManager dbManager("todoot.sqlite");
     dbManager.syncSchema(); // Ensure table exists
-    // if (dbManager.getAllTodos().empty()) {
-    //     dbManager.addTodo("Learn Crow", "Understand Mustache templating.", false);
-    //     dbManager.addTodo("Build App", "Complete the Todo List application.", true);
-    //     std::cout << "Inserted initial todo items." << std::endl;
-    // }
+    if (dbManager.getAllTodos().empty()) {
+        dbManager.addTodo("Learn Crow", "Understand Mustache templating and crow.", false);
+        dbManager.addTodo("Build App", "Complete the Todo List application.", true);
+        dbManager.addTodo("Doing homework", "", false);
+        std::cout << "Inserted initial todo items." << std::endl;
+    }
     crow::SimpleApp app;
     // Set base directory for Mustache templates
     crow::mustache::set_global_base("./static");
