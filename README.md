@@ -57,7 +57,7 @@ You'll need the **GCC C++ compiler**, CMake, and a few libraries installed throu
     * On **Arch Linux-based systems**:
         ```sh
         yay -Syu base-devel cmake crow zlib sqlite
-        (you can use paru as well)
+        # you can use paru as well
         ```
 
 2.  **Clone Project & Sub-dependencies**
@@ -65,7 +65,7 @@ You'll need the **GCC C++ compiler**, CMake, and a few libraries installed throu
 
     ```sh
     # Clone the ToDoot project
-    git clone [https://github.com/M-U-T-E/ToDoot.git](https://github.com/M-U-T-E/ToDoot.git)
+    git clone https://github.com/M-U-T-E/ToDoot.git
     cd ToDoot
 
     # Clone sqlite_orm into the vendor directory
